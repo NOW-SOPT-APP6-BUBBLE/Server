@@ -60,8 +60,7 @@ public class ArtistMemberServiceImpl implements ArtistMemberService{
     // 구독여부도 판단해줘야함~
     // 구독 정보가 존재하는지 확인부터
     boolean exists = subscribedArtistRepository.existsByMemberAndArtistMember(findMember, findArtistMember);
-    return ArtistMemberDetailFindDto.of(
-        findArtistMember, exists
-    );
+
+    return ArtistMemberDetailFindDto.of(findArtistMember, exists);
   }
 }
