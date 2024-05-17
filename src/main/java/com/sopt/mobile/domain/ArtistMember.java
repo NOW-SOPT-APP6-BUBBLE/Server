@@ -32,6 +32,8 @@ public class ArtistMember extends BaseTime {
     @OneToMany(mappedBy = "artistMember")
     private List<SubscribedArtist> subscribedArtistList = new ArrayList<>();
 
+    private boolean isService;
+
     @Builder
     public ArtistMember(String name, String imageURL, String introduction, Artist artist) {
         this.name = name;
