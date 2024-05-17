@@ -26,7 +26,7 @@ public class ArtistMember extends BaseTime {
     private String introduction;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "artist_id")
+    @JoinColumn(name = "artist_id", nullable = false)
     private Artist artist;
 
     @OneToMany(mappedBy = "artistMember")
