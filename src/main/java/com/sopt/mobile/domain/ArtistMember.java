@@ -15,7 +15,7 @@ public class ArtistMember extends BaseTime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @Column(nullable = false)
     private String name;
 
     @Lob
@@ -23,7 +23,7 @@ public class ArtistMember extends BaseTime {
 
     private String introduction;
 
-    @NotNull
+    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "artist_id")
     private Artist artist;

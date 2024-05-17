@@ -15,7 +15,7 @@ public class SubscribedArtist extends BaseTime{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotNull
+    @Column(nullable = false)
     private String nickname;
 
     @ManyToOne(fetch = FetchType.LAZY)
