@@ -25,9 +25,8 @@ public class SubscribedArtistController {
       @RequestHeader(name = "memberId") Long memberId,
       @PathVariable(name = "artistMemberId") Long artistMemberId) {
 
-
     subscribedArtistService.removeSubscribedArtist(memberId, artistMemberId);
     return ResponseEntity.ok(SuccessStatusResponse.of(
-        SuccessMessage.ARTIST_MEMBER_FIND_SUCCESS ));
+        SuccessMessage.SUBSCRIBED_ARTISTS_DELETE_SUCCESS ));
   }
 }
