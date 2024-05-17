@@ -4,7 +4,7 @@ import com.sopt.mobile.domain.Artist;
 
 public record ArtistsFindResponseDto(
         String name,
-        String imageURL
+        String photo
 ) {
     public static ArtistsFindResponseDto of(Artist artist) {
         return new ArtistsFindResponseDto(artist.getName(), artist.getImageURL());
