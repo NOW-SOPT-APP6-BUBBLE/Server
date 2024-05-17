@@ -26,7 +26,7 @@ public class ArtistMemberQuerydslRepositoryImpl implements ArtistMemberQuerydslR
                 .select(subscribedArtist.artistMember)
                 .from(subscribedArtist)
                 .where(subscribedArtist.member.eq(member))
-        ))
+        ), artistMember.isService.isTrue())
         .fetch();
   }
 
@@ -39,7 +39,8 @@ public class ArtistMemberQuerydslRepositoryImpl implements ArtistMemberQuerydslR
                 .select(subscribedArtist.artistMember)
                 .from(subscribedArtist)
                 .where(subscribedArtist.member.eq(member))
-        ))
+        ) , artistMember.isService.isTrue()
+        )
         .fetch();
   }
 }
