@@ -2,6 +2,8 @@ package com.sopt.mobile.domain;
 
 import jakarta.annotation.Nonnull;
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +25,9 @@ public class Artist extends BaseTime {
     private String imageURL;
 
     private String description;
+
+    @OneToMany(mappedBy = "artist")
+    private List<ArtistMember> artistMemberList = new ArrayList<>();
 
     @Builder
     public Artist(String name, String imageURL, String description) {

@@ -1,6 +1,8 @@
 package com.sopt.mobile.domain;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,10 +25,12 @@ public class ArtistMember extends BaseTime {
 
     private String introduction;
 
-    @Column(nullable = false)
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "artist_id")
     private Artist artist;
+
+    @OneToMany(mappedBy = "artistMember")
+    private List<SubscribedArtist> subscribedArtistList = new ArrayList<>();
 
     @Builder
     public ArtistMember(String name, String imageURL, String introduction, Artist artist) {
