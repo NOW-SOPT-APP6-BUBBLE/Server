@@ -157,6 +157,7 @@ Icon
 
 src/main/resources/*.yml
 
+src/main/generated/*
 # Thumbnails
 ._*
 
