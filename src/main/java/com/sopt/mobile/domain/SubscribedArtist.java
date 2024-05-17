@@ -19,11 +19,11 @@ public class SubscribedArtist extends BaseTime{
     private String nickname;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "artistMemberId")
+    @JoinColumn(name = "artist_member_id")
     private ArtistMember artistMember;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "memberId")
+    @JoinColumn(name = "member_id")
     private Member member;
 
     @Builder

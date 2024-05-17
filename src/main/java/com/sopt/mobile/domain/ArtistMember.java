@@ -18,13 +18,14 @@ public class ArtistMember extends BaseTime {
     @NotNull
     private String name;
 
+    @Lob
     private String imageURL;
 
     private String introduction;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "artistId")
+    @JoinColumn(name = "artist_id")
     private Artist artist;
 
     @Builder

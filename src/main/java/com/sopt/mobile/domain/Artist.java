@@ -1,10 +1,7 @@
 package com.sopt.mobile.domain;
 
 import jakarta.annotation.Nonnull;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,6 +19,7 @@ public class Artist extends BaseTime {
     @NotNull
     private String name;
 
+    @Lob
     private String imageURL;
 
     private String description;
