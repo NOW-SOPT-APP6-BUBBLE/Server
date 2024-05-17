@@ -54,7 +54,7 @@ public class ArtistMemberServiceImpl implements ArtistMemberService{
     );
 
     // 아티스트 찾기
-    ArtistMember findArtistMember = artistMemberRepository.findById(artistMemberId).orElseThrow(
+    ArtistMember findArtistMember = artistMemberRepository.findServiceArtistMemberById(artistMemberId).orElseThrow(
       () -> new NotFoundException(ErrorMessage.MEMBER_NOT_FOUND_BY_ID_EXCEPTION));
 
     // 구독여부도 판단해줘야함~

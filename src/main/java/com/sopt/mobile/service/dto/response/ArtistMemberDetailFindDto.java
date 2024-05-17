@@ -15,13 +15,19 @@ public record ArtistMemberDetailFindDto(
   public static ArtistMemberDetailFindDto of(
       ArtistMember artistMember, boolean isSubscribed
   ) {
+    String name = null;
+
+    if (!artistMember.getArtist().isSole()) {
+      name = artistMember.getArtist().getName();
+    }
+
     return new ArtistMemberDetailFindDto(
         artistMember.getId(),
         artistMember.getNickname(),
         artistMember.getImageURL(),
         artistMember.getIntroduction(),
         isSubscribed,
-        artistMember.getArtist().getName(),
+        name,
         artistMember.getName());
   }
 }

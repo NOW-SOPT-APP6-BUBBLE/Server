@@ -26,6 +26,8 @@ public class Artist extends BaseTime {
 
     private String description;
 
+    private boolean isSole;
+
     @OneToMany(mappedBy = "artist")
     private List<ArtistMember> artistMemberList = new ArrayList<>();
 
