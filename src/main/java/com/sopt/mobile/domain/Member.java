@@ -1,10 +1,11 @@
 package com.sopt.mobile.domain;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.antlr.v4.runtime.misc.NotNull;
 
 @Getter
 @Entity
@@ -25,6 +26,9 @@ public class Member extends BaseTime {
         this.name = name;
         this.email = email;
     }
+
+    @OneToMany(mappedBy = "member")
+    private List<SubscribedArtist> subscribedArtistList = new ArrayList<>();
 
     public static Member createMember(String name, String email) {
         return Member
