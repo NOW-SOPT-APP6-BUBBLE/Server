@@ -29,9 +29,6 @@ public class ArtistMember extends BaseTime {
     @JoinColumn(name = "artist_id", nullable = false)
     private Artist artist;
 
-    @OneToMany(mappedBy = "artistMember")
-    private List<SubscribedArtist> subscribedArtistList = new ArrayList<>();
-
     private boolean isService;
 
     @Builder
