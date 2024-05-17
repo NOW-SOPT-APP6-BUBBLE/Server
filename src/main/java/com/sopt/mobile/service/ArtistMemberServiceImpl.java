@@ -1,7 +1,6 @@
 package com.sopt.mobile.service;
 
 import com.sopt.mobile.common.dto.ErrorMessage;
-import com.sopt.mobile.domain.ArtistMember;
 import com.sopt.mobile.domain.Member;
 import com.sopt.mobile.exception.NotFoundException;
 import com.sopt.mobile.repository.ArtistMemberRepository;
@@ -11,6 +10,7 @@ import com.sopt.mobile.service.dto.response.ArtistMemberListFindDto;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +20,7 @@ public class ArtistMemberServiceImpl implements ArtistMemberService{
   private final ArtistMemberRepository artistMemberRepository;
 
   @Override
+  @Transactional(readOnly = true)
   public ArtistMemberListFindDto findSubscribedArtists(Long memberId) {
 
     // 멤버 찾기

@@ -33,7 +33,7 @@ public class SubscribedArtistServiceImpl implements SubscribedArtistService{
         () -> new NotFoundException(ErrorMessage.MEMBER_NOT_FOUND_BY_ID_EXCEPTION)
     );
 
-    // 구독 정보가 존재하는지 확인
+    // 구독 정보가 존재하는지 확인부터
     boolean exists = subscribedArtistRepository.existsByMemberAndArtistMember(findMember, findArtistMember);
     if (!exists) {
       // 구독 정보가 없으면 예외 발생
