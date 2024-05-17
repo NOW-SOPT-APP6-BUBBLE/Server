@@ -15,8 +15,8 @@ public class SubscribedArtist extends BaseTime{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private String nickname;
+//    @Column(nullable = false)
+//    private String nickname;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "artist_member_id")
@@ -28,7 +28,7 @@ public class SubscribedArtist extends BaseTime{
 
     @Builder
     public SubscribedArtist(String nickname, ArtistMember artistMember, Member member) {
-        this.nickname = nickname;
+//        this.nickname = nickname;
         this.artistMember = artistMember;
         this.member = member;
     }
@@ -36,7 +36,7 @@ public class SubscribedArtist extends BaseTime{
     public static SubscribedArtist createSubscribedArtist(String nickname, ArtistMember artistMember, Member member){
         return SubscribedArtist
                 .builder()
-                .nickname(nickname)
+//                .nickname(nickname)
                 .artistMember(artistMember)
                 .member(member)
                 .build();
