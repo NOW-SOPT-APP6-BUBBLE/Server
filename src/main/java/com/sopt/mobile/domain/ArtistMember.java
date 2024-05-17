@@ -31,21 +31,27 @@ public class ArtistMember extends BaseTime {
 
     private boolean isService;
 
+    private String nickname;
+
     @Builder
-    public ArtistMember(String name, String imageURL, String introduction, Artist artist) {
+    public ArtistMember(String name, String imageURL, String introduction, Artist artist, boolean isService, String nickname) {
         this.name = name;
         this.imageURL = imageURL;
         this.introduction = introduction;
         this.artist = artist;
+        this.isService = isService;
+        this.nickname = nickname;
     }
 
-    public static ArtistMember createArtistMember(String name, String imageURL, String introduction, Artist artist) {
+    public static ArtistMember createArtistMember(String name, String imageURL, String introduction, Artist artist, boolean isService, String nickname) {
         return ArtistMember
                 .builder()
                 .name(name)
                 .imageURL(imageURL)
                 .introduction(introduction)
                 .artist(artist)
+                .isService(isService)
+                .nickname(nickname)
                 .build();
     }
 }
