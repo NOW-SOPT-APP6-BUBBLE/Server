@@ -6,10 +6,7 @@ import com.sopt.mobile.service.ArtistService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestHeader;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -25,5 +22,15 @@ public class ArtistController {
         return ResponseEntity
                 .status(HttpStatus.FOUND)
                 .body(SuccessStatusResponse.of(SuccessMessage.ARTISTS_FIND_SUCCESS, artistService.findArtists()));
+    }
+
+    @GetMapping("/{artistId}")
+    public ResponseEntity<SuccessStatusResponse> findArtist(
+            @RequestHeader Long memberId,
+            @PathVariable(name = "artistId") Long artistId
+    ) {
+        return ResponseEntity
+                .status(HttpStatus.FOUND)
+                .body(SuccessStatusResponse.of(SuccessMessage.ARTIST_FIND_SUCCESS, artistService.findArtist(artistId)));
     }
 }
