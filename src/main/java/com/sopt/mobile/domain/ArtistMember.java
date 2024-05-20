@@ -20,6 +20,7 @@ public class ArtistMember extends BaseTime {
     @Column(nullable = false)
     private String name;
 
+    @Column(columnDefinition="TEXT")
     private String imageURL;
 
     private String introduction;
