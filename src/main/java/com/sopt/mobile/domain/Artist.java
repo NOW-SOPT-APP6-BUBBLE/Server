@@ -21,7 +21,6 @@ public class Artist extends BaseTime {
     @Column(nullable = false)
     private String name;
 
-    @Lob
     private String imageURL;
 
     private String description;
