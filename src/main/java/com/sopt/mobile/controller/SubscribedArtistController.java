@@ -10,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/vi/artists/artist-members/friend")
+@RequestMapping("/api/v1/artists/artist-members/friend")
 @RequiredArgsConstructor
 public class SubscribedArtistController {
 

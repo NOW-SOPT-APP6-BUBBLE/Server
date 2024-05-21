@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/vi/artists/artist-members")
+@RequestMapping("/api/v1/artists/artist-members")
 @RequiredArgsConstructor
 public class ArtistMemberController {
 
