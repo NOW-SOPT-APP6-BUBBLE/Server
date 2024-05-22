@@ -47,7 +47,7 @@ public class ArtistService {
         List<Subscribe> subscribe = new ArrayList<Subscribe>();
 
         for (int i = 0; i < serviceArtistMembers.size(); i++) {
-            subscribe.add(new Subscribe(Integer.toString(i + 1) +"인권", 10000 * (i + 1)));
+            subscribe.add(new Subscribe(Integer.toString(i + 1) +"인권", 4500 * (i + 1), 4500 * (i + 1) - 1000 * (i)));
         }
 
         List<String> isServiceMembers = new ArrayList<String>();
