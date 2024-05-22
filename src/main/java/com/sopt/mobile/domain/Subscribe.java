@@ -7,10 +7,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Subscribe {
     String name;
+    Integer previousPrice;
     Integer price;
 
-    public Subscribe(String name, Integer price) {
+    public Subscribe(String name, Integer previousPrice, Integer price) {
         this.name = name;
+        this.previousPrice = previousPrice;
         this.price = price;
     }
 }
