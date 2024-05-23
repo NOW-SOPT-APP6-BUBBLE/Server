@@ -33,7 +33,7 @@ public class SubscribedArtistController {
     ) {
         subscribedArtistService.addSubscribedArtist(memberId, artistMemberId);
         return ResponseEntity
-                .status(HttpStatus.FOUND)
+                .status(HttpStatus.CREATED)
                 .body(SuccessStatusResponse.of(SuccessMessage.SUBSCRIBED_ARTISTS_REGISTER_SUCCESS));
     }
 }
