@@ -20,7 +20,7 @@ public class ArtistController {
             @RequestHeader Long memberId
     ) {
         return ResponseEntity
-                .status(HttpStatus.FOUND)
+                .status(HttpStatus.OK)
                 .body(SuccessStatusResponse.of(SuccessMessage.ARTISTS_FIND_SUCCESS, artistService.findArtists()));
     }
 
@@ -30,7 +30,7 @@ public class ArtistController {
             @PathVariable(name = "artistId") Long artistId
     ) {
         return ResponseEntity
-                .status(HttpStatus.FOUND)
+                .status(HttpStatus.OK)
                 .body(SuccessStatusResponse.of(SuccessMessage.ARTIST_FIND_SUCCESS, artistService.findArtist(artistId)));
     }
 }
